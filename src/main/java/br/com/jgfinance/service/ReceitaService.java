@@ -12,8 +12,11 @@ import java.util.List;
 @Service
 public class ReceitaService {
 
-    @Autowired
-    private ReceitaRepository receitaRepository;
+    private final ReceitaRepository receitaRepository;
+
+    public ReceitaService(ReceitaRepository receitaRepository) {
+        this.receitaRepository = receitaRepository;
+    }
 
     public Receita create(ReceitaForm form) {
         Receita receita = new Receita();
